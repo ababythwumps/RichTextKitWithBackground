@@ -1,3 +1,24 @@
+# ORIGINAL PROJECT'S README--THIS PROJECT IS A FORK AND HAS ONE EXTRA PARAMETER IN THE RICH TEXT EDIOR CALL THAT ALLOWS FOR A BACKGROUND COLOR CHANGE:
+```swift
+struct MyView: View {
+
+    @State private var text = NSAttributedString(string: "Type here...")
+
+    @State private var backgroundColor: Color = .blue
+    
+    @StateObject var context = RichTextContext()
+
+    var body: some View {
+        RichTextEditor(text: $text, backgroundColor: backgroundColor, context: context) {
+            // You can customize the native text view here
+        }
+        .focusedValue(\.richTextContext, context)
+    }
+}
+```
+
+# BELOW IS THE ORIGINAL PROJECT'S README, THE ONLY PART CHANGED FOR THIS FORK IS ABOVE
+
 <p align="center">
     <img src="Resources/Icon.png" alt="Project Icon" width="250" />
 </p>
