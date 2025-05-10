@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import RichTextKitWithBackground
 
 public extension RichTextFont {
 
@@ -59,7 +60,7 @@ public extension RichTextFont {
                 set: { selection = $0.fontName }
             )
 
-            RichTextKit.ForEachPicker(
+            RichTextKitWithBackground.ForEachPicker(
                 items: config.fontsToList(for: selection),
                 selection: font,
                 dismissAfterPick: config.dismissAfterPick

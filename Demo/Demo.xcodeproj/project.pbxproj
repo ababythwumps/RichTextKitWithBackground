@@ -12,7 +12,6 @@
 		A983955E2B964EC200727A30 /* DemoEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A983955D2B964EC200727A30 /* DemoEditorScreen.swift */; };
 		A98395602B964EC300727A30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A983955F2B964EC300727A30 /* Assets.xcassets */; };
 		A98395652B964EC300727A30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98395642B964EC300727A30 /* Preview Assets.xcassets */; };
-		A983956D2B964EF300727A30 /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = A983956C2B964EF300727A30 /* RichTextKit */; };
 		A98395712B96571100727A30 /* DemoMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98395702B96571100727A30 /* DemoMenu.swift */; };
 		A98395742B96684500727A30 /* AboutCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98395732B96684500727A30 /* AboutCommand.swift */; };
 		A98395762B9669CB00727A30 /* ViewDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98395752B9669CB00727A30 /* ViewDebug.swift */; };
@@ -51,6 +50,7 @@
 		A98395CE2B97011E00727A30 /* FontRepresentable+RichTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98395AD2B97011E00727A30 /* FontRepresentable+RichTextTests.swift */; };
 		A98395CF2B97011E00727A30 /* RichTextDataReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98395AF2B97011E00727A30 /* RichTextDataReaderTests.swift */; };
 		A98395D02B97011E00727A30 /* RichTextDataFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98395B02B97011E00727A30 /* RichTextDataFormatTests.swift */; };
+		DD67342D2DCFEEF600D143B6 /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD67342C2DCFEEF600D143B6 /* RichTextKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A983956D2B964EF300727A30 /* RichTextKit in Frameworks */,
+				DD67342D2DCFEEF600D143B6 /* RichTextKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +330,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				A983956C2B964EF300727A30 /* RichTextKit */,
+				DD67342C2DCFEEF600D143B6 /* RichTextKit */,
 			);
 			productName = Demo;
 			productReference = A98395562B964EC200727A30 /* Demo.app */;
@@ -388,6 +388,7 @@
 			mainGroup = A983954D2B964EC200727A30;
 			packageReferences = (
 				A983956B2B964EF300727A30 /* XCLocalSwiftPackageReference ".." */,
+				DD67342B2DCFEEF600D143B6 /* XCRemoteSwiftPackageReference "RichTextKit" */,
 			);
 			productRefGroup = A98395572B964EC200727A30 /* Products */;
 			projectDirPath = "";
@@ -772,13 +773,25 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		DD67342B2DCFEEF600D143B6 /* XCRemoteSwiftPackageReference "RichTextKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/RichTextKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		A983956C2B964EF300727A30 /* RichTextKit */ = {
+		A98395862B97010C00727A30 /* RichTextKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RichTextKit;
 		};
-		A98395862B97010C00727A30 /* RichTextKit */ = {
+		DD67342C2DCFEEF600D143B6 /* RichTextKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = DD67342B2DCFEEF600D143B6 /* XCRemoteSwiftPackageReference "RichTextKit" */;
 			productName = RichTextKit;
 		};
 /* End XCSwiftPackageProductDependency section */
