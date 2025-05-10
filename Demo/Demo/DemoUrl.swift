@@ -10,7 +10,7 @@ import SwiftUI
 
 enum DemoUrl: String, Equatable, Identifiable {
 
-    case github = "https://github.com/danielsaidi/RichTextKit"
+    case github = "https://github.com/ababythwumps/RichTextKitWithBackground.git"
     case documentation = "https://danielsaidi.github.io/RichTextKit/documentation/richtextkit/"
 }
 

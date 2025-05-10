@@ -11,7 +11,7 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.richtextkit.archiveddata</string>
+				<string>com.richtextkitwithbackground.archiveddata</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).demo-document</string>
@@ -29,7 +29,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.richtextkit.archiveddata</string>
+			<string>com.richtextkitwithbackground.archiveddata</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

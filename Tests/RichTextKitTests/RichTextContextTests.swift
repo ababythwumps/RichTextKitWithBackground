@@ -3,7 +3,7 @@
 //  RichTextKit
 
 //  Created by Daniel Saidi on 2022-12-06.
-//  Copyright © 2022-2023 Daniel Saidi. All rights reserved.
+//  Forked by Michael Kao on 2025-5-09.
 //
 
 import RichTextKit
