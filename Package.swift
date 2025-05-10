@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "RichTextKit",
+    name: "RichTextKitWithBackground",
     defaultLocalization: "en",
     platforms: [
         .iOS(.v15),
@@ -14,19 +14,19 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "RichTextKit",
-            targets: ["RichTextKit"]
+            name: "RichTextKitWithBackground",
+            targets: ["RichTextKitWithBackground"]
         )
     ],
     dependencies: [
         .package(
-            url: "https://github.com/danielsaidi/MockingKit.git",
+            url: "https://github.com/ababythwumps/RichTextKitWithBackground.git",
             .upToNextMajor(from: "1.5.0")
         )
     ],
     targets: [
         .target(
-            name: "RichTextKit",
+            name: "RichTextKitWithBackground",
             dependencies: [],
             resources: [.process("Resources")],
             swiftSettings: [
