@@ -24,6 +24,7 @@ struct DemoEditorScreen: View {
             #endif
             RichTextEditor(
                 text: $document.text,
+                backgroundColor: .clear,
                 context: context
             ) {
                 $0.textContentInset = CGSize(width: 30, height: 30)
@@ -66,6 +67,7 @@ struct DemoEditorScreen: View {
         )
         .richTextFormatToolbarConfig(.init(colorPickers: []))
         .viewDebug()
+        .modifier(ClearWindowModifier())
     }
 }
 
@@ -93,4 +95,30 @@ private extension DemoEditorScreen {
         document: .constant(DemoDocument()),
         context: .init()
     )
+}
+
+struct ClearWindowModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(
+                WindowAccessor { window in
+                    window?.isOpaque = false
+                    window?.backgroundColor = .clear
+                }
+            )
+    }
+}
+
+struct WindowAccessor: NSViewRepresentable {
+    var callback: (NSWindow?) -> Void
+
+    func makeNSView(context: Context) -> NSView {
+        let view = NSView()
+        DispatchQueue.main.async {
+            self.callback(view.window)
+        }
+        return view
+    }
+
+    func updateNSView(_ nsView: NSView, context: Context) {}
 }

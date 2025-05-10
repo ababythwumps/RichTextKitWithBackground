@@ -3,11 +3,14 @@
 //  RichTextKit
 //
 //  Created by Daniel Saidi on 2022-05-21.
-//  Copyright © 2022-2024 Daniel Saidi. All rights reserved.
+//  Forked by Michael Kao on 2025-05-25.
 //
 
 #if iOS || macOS || os(tvOS) || os(visionOS)
 import SwiftUI
+#if os(macOS)
+import AppKit
+#endif
 
 /**
  This view can be used to view and edit rich text in SwiftUI.
@@ -59,16 +62,19 @@ public struct RichTextEditor: ViewRepresentable {
     ///
     /// - Parameters:
     ///   - text: The rich text to edit.
+    ///   - backgroundColor: The background color to use.
     ///   - context: The rich text context to use.
     ///   - format: The rich text data format, by default `.archivedData`.
     ///   - viewConfiguration: A platform-specific view configuration, if any.
     public init(
         text: Binding<NSAttributedString>,
+        backgroundColor: Color = .black,
         context: RichTextContext,
         format: RichTextDataFormat = .archivedData,
         viewConfiguration: @escaping ViewConfiguration = { _ in }
     ) {
         self.text = text
+        self.backgroundColor = backgroundColor
         self._context = ObservedObject(wrappedValue: context)
         self.format = format
         self.viewConfiguration = viewConfiguration
@@ -80,6 +86,7 @@ public struct RichTextEditor: ViewRepresentable {
     private var context: RichTextContext
 
     private var text: Binding<NSAttributedString>
+    private var backgroundColor: Color
     private var format: RichTextDataFormat
     private var viewConfiguration: ViewConfiguration
 
@@ -115,6 +122,7 @@ public struct RichTextEditor: ViewRepresentable {
         textView.setup(with: text.wrappedValue, format: format)
         textView.configuration = config
         textView.theme = style
+        textView.backgroundColor = UIColor(backgroundColor)
         viewConfiguration(textView)
         return textView
     }
@@ -127,6 +135,7 @@ public struct RichTextEditor: ViewRepresentable {
         textView.setup(with: text.wrappedValue, format: format)
         textView.configuration = config
         textView.theme = style
+        textView.backgroundColor = NSColor(backgroundColor)
         viewConfiguration(textView)
         return scrollView
     }
